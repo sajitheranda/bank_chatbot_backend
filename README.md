@@ -119,8 +119,6 @@ Implements custom actions for handling logic beyond predefined responses:
 6. Run the action server:
 - ``` bash
   rasa run actions
-
-
     
 ## Usage
 
