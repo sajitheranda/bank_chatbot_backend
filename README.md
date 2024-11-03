@@ -2,6 +2,15 @@
 
 This project is a backend for a bank chatbot developed using [Rasa](https://rasa.com/), supporting interactions in both Sinhala and English. The chatbot assists users with various banking services, including checking account balances, applying for loans, and accessing transaction details.
 
+## Demo Video
+
+<div align="center">
+  <a href="https://youtu.be/K6prUbMt-_Q" target="_blank">
+    <img src="https://img.youtube.com/vi/K6prUbMt-_Q/0.jpg" alt="Watch the video" width="560" height="315">
+  </a>
+  <p><em>Click the image above to watch the video</em></p>
+</div>
+
 ## Table of Contents
 - [Features](#features)
 - [Project Structure](#project-structure)
