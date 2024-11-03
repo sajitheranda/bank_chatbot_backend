@@ -12,7 +12,7 @@ This project is a backend for a bank chatbot developed using [Rasa](https://rasa
 </div>
 
 ## Table of Contents
-- [Screenshots](#S=screenshots).
+- [Screenshots](#screenshots).
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Key Files and Configuration](#key-files-and-configuration)
