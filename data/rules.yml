@@ -1,0 +1,84 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Activate balance form
+  steps:
+  - intent: account_balance
+  - action: account_balance_form
+  - active_loop: account_balance_form
+
+- rule: Submit balance form
+  condition:
+  - active_loop: account_balance_form
+  steps:
+  - action: account_balance_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: get_account_balance
+
+- rule: Activate transaction form
+  steps:
+  - intent: account_transactions
+  - action: account_transaction_form
+  - active_loop: account_transaction_form
+
+- rule: Submit transaction form
+  condition:
+  - active_loop: account_transaction_form
+  steps:
+  - action: account_transaction_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: get_account_transactions
+
+- rule: Activate loan form
+  steps:
+  - intent: apply_loan
+  - action: loan_form
+  - active_loop: loan_form
+
+- rule: Submit loan form
+  condition:
+  - active_loop: loan_form
+  steps:
+  - action: loan_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: save_loan_application
+
+
+- rule: Activate card form
+  steps:
+  - intent: apply_card
+  - action: card_form
+  - active_loop: card_form
+
+- rule: Submit card form
+  condition:
+  - active_loop: card_form
+  steps:
+  - action: card_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: save_card_application
+
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: get_response

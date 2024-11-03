@@ -1,0 +1,115 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: welcome path
+  steps:
+  - intent: welcome
+  - action: welcome_user
+
+- story: account balance form
+  steps:
+  - intent: account_balance
+  - action: account_balance_form
+  - active_loop: account_balance_form
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set:
+    - requested_slot: password
+  - slot_was_set:
+    - requested_slot: account_number
+  - active_loop: null
+  - action: get_account_balance
+
+- story: apply loan form
+  steps:
+  - intent: apply_loan
+  - action: loan_form
+  - active_loop: loan_form
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set:
+    - requested_slot: password
+  - slot_was_set:
+    - requested_slot: loan_type
+  - slot_was_set:
+    - requested_slot: loan_amount
+  - slot_was_set:
+    - requested_slot: loan_duration
+  - slot_was_set:
+    - requested_slot: telephone_number
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - requested_slot: loan_reason
+  - active_loop: null
+  - action: save_loan_application
+
+- story: apply card form
+  steps:
+  - intent: apply_card
+  - action: card_form
+  - active_loop: card_form
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set:
+    - requested_slot: password
+  - slot_was_set:
+    - requested_slot: card_type
+  - slot_was_set:
+    - requested_slot: card_amount
+  - slot_was_set:
+    - requested_slot: telephone_number
+  - slot_was_set:
+    - requested_slot: email
+  - active_loop: null
+  - action: save_card_application
+
+
+
+
+- story: account transaction form
+  steps:
+  - intent: account_transactions
+  - action: account_transaction_form
+  - active_loop: account_transaction_form
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set:
+    - requested_slot: password
+  - slot_was_set:
+    - requested_slot: account_number
+  - active_loop: null
+  - action: get_account_transactions
+
+- story: logout
+  steps:
+  - intent: logout
+  - action: reset_all_slots

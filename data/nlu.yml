@@ -1,0 +1,284 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: username
+  examples: |
+    - My username is [john_doe](username).
+    - The username is [jane_smith](username).
+    - Here's my username - [user123](username).
+    - You can find my username as [johnd](username).
+    - [user234](username)
+
+- intent: password
+  examples: |
+    - My password is [secure123](password).
+    - The password is [p@ssw0rd](password).
+    - Here's my password - [pa$$123](password).
+    - You can find my password as [SecretPass](password).
+    - [test](password)
+
+- intent: welcome
+  examples: |
+    - Welcome
+
+- intent: account_balance
+  examples: |
+    - How can I check my account balance?
+    - What's the process to get my account balance?
+    - Can you provide information about checking my balance?
+    - I want to know my current account balance.
+    - How do I inquire about my account balance?
+    - How can I see how much money is in my account?
+    - What's my available balance?
+    - Can you tell me my account balance?
+    - What is my current account balance?
+    - I'd like to know the balance in my account.
+    - balance
+    - mata account balance eka balanaa one.
+
+- intent: account_transactions
+  examples: |
+    - Can you provide details about my recent transactions?
+    - How can I see my transaction history?
+    - Tell me about my latest transactions.
+    - What are the recent transactions on my account?
+    - I want to know my transaction record.
+    - Can you show me the transactions on my account?
+    - How do I check my transaction history?
+    - What's the process to get transaction details?
+    - I'd like to see my recent transactions.
+    - Can you give me information about my transactions?
+    - mata account transaction eka balanaa one.
+
+- intent: account_number
+  examples: |
+    - My account number is [1234567890](account_number).
+    - The account number is [9876543210](account_number).
+    - Here's my account number - [4567890123](account_number).
+    - You can find my account number as [5678901234](account_number).
+    - [1082310654](account_number)
+
+- intent: apply_loan
+  examples: |
+    - Tell me about the different types of loans available.
+    - What kinds of loans does the bank offer?
+    - Explain the types of loans I can get from the bank.
+    - I'm interested in learning about the loan options.
+    - Can you provide information on personal loans?
+    - Tell me about educational loans.
+    - Explain vehicle loans.
+    - What are the loan options for buying a car?
+    - I'd like to know about home loans.
+    - How can I apply for a personal loan?
+    - bank offer ekak denna?
+
+- intent: loan_type
+  examples: |
+    - I need a [personal loan](loan_type).
+    - Can I get a [home loan](loan_type)?
+    - I'm looking for an [educational loan](loan_type).
+    - Do you offer [vehicle loans](loan_type)?
+    - What are the options for [business loans](loan_type)?
+    - Can you provide information on [medical loans](loan_type)?
+    - I'd like to apply for a [mortgage loan](loan_type).
+    - Tell me about [student loans](loan_type).
+    - [student loans](loan_type).
+    - [personal loan](loan_type) ekak one
+
+- intent: loan_amount
+  examples: |
+    - I need Rs [200000](loan_amount).
+    - I'm looking for a loan of Rs [300000](loan_amount).
+    - I require Rs [150000](loan_amount) for the loan.
+    - I'd like to borrow Rs [250000](loan_amount).
+    - The loan amount I need is Rs [350000](loan_amount).
+    - Rs [180000](loan_amount) is the amount I'm looking to borrow.
+    - [200000](loan_amount).
+    - [20000](loan_amount) k one.
+
+- intent: loan_duration
+  examples: |
+    - I need [12 years](loan_duration).
+    - My preferred loan duration is [5 years](loan_duration).
+    - I'm looking for a loan term of [10 years](loan_duration).
+    - The loan duration I have in mind is [15 years](loan_duration).
+    - I'd like to borrow for [7 years](loan_duration).
+    - The loan term I need is [20 years](loan_duration).
+    - [20 years](loan_duration).
+    - awurudu [20](loan_duration) k one.
+    - awurudu [20](loan_duration)
+    - awurudu [20]
+
+- intent: telephone_number
+  examples: |
+    - My telephone number is [123-456-7890](telephone_number).
+    - You can reach me at [987-654-3210](telephone_number).
+    - Please call me at [555-123-4567](telephone_number).
+    - Here's my contact number: [888-555-9999](telephone_number).
+    - Contact me at [777-888-9999](telephone_number).
+    - [777-888-9999](telephone_number).
+    - mage number eka [077 7777777](telephone_number).
+    - number eka 077 7777777.
+    - [077 7777777](telephone_number).
+
+- intent: email
+  examples: |
+    - Our email address for inquiries is [info@example.com](email).
+    - Feel free to email us at [support@example.com](email).
+    - You can reach us through email at [contact@example.com](email).
+    - For email contact, please use [inquiries@example.com](email).
+    - Please contact us via email at [questions@example.com](email).
+    - If you have any questions, you can email us at [info@example.com](email).
+    - [info@gmail.com](email).
+    - mage email eka [info@gmail.com](email).
+    - mage email eka info@gmail.com.
+
+- intent: loan_reason
+  examples: |
+    - I need a loan for [buying a new home](loan_reason).
+    - My reason for taking out a loan is [financing my education](loan_reason).
+    - I'm looking to start a business, so I need a loan for [business startup](loan_reason).
+    - My loan purpose is [covering medical expenses](loan_reason).
+    - I want to consolidate debt, so I need a loan for [debt consolidation](loan_reason).
+    - [debt consolidation](loan_reason).
+    - [mata geyak ganna](loan_reason).
+
+- intent: apply_card
+  examples: |
+    - I'd like to apply for a credit card.
+    - How do I get a new credit card?
+    - Can I apply for a credit card?
+    - Please guide me through the credit card application.
+    - What are the steps for a credit card application?
+    - I want to apply for a new debit card.
+    - How can I get a debit card?
+    - Please assist with the debit card application.
+    - How do I apply for a debit card?
+    - mata one aluth bank card ekak.
+
+- intent: card_type
+  examples: |
+    - I need a [credit card](card_type).
+    - Can I get a [credit card](card_type)?
+    - I'd like to apply for a [credit card](card_type).
+    - Tell me about [credit cards](card_type).
+    - [Credit card](card_type) application.
+    - I need a [debit card](card_type).
+    - Can I get a [debit card](card_type)?
+    - I'd like to apply for a [debit card](card_type).
+    - mama kanathi [credit card](card_type) 
+
+- intent: card_amount
+  examples: |
+    - I need Rs [20,000](card_amount).
+    - I'm looking for a card with a limit of Rs [30,000](card_amount).
+    - I require Rs [15,000](card_amount) for my card.
+    - I'd like to have a card with a limit of Rs [25,000](card_amount).
+    - The card amount I need is Rs [35,000](card_amount).
+    - Rs [18,000](card_amount) is the amount I'm looking for my card.
+    - mata [20,000](card_amount) k one
+
+- intent: other_quetion_1
+  examples: |
+    - types of accounts in ABC bank
+
+- intent: other_quetion_2
+  examples: |
+    - Interest Rates in ABC bank
+
+- intent: other_quetion_3
+  examples: |
+    - give  Security features
+
+- intent: logout
+  examples: |
+    - logout

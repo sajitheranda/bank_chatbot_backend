@@ -1,0 +1,248 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - username
+  - password
+  - welcome
+  - apply_loan
+  - apply_card
+  - account_balance
+  - account_transactions
+  - account_number
+  - loan_type
+  - loan_amount
+  - loan_duration
+  - telephone_number
+  - email
+  - card_type
+  - card_amount
+  - loan_reason
+  - logout
+  - other_quetion_1
+  - other_quetion_2
+  - other_quetion_3
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by ABC Bank."
+
+  utter_ask_username:
+  - text: "Could you please provide your username?"
+
+  utter_ask_password:
+  - text: "To ensure security, I'll need your password as well. Could you please provide your password?"
+
+  utter_ask_account_number:
+  - text: "Please provide your account number for which you want to check the balance."
+
+  utter_ask_loan_type:
+  - text: "Sure, we offer various types of loans, including personal loans, home loans, educational loans, vehicle loans, business loans, medical loans, mortgage loans, and student loans. Which type are you interested in?"
+
+  utter_ask_loan_amount:
+  - text: "Great! To proceed, I need to know the loan amount. How much money are you looking to borrow?"
+
+  utter_ask_loan_duration:
+  - text: "The loan term depends on the type of loan. How long would you like the loan for? Please provide the duration in months or years."
+
+  utter_ask_telephone_number:
+  - text: "To assist you further, please provide your telephone number"
+  
+  utter_ask_email:
+  - text: "To assist you further, please provide your email address."
+
+  utter_ask_loan_reason:
+  - text: "Loans can serve various purposes, such as buying a home, financing education, covering medical expenses, or starting a business. What's your specific reason for seeking a loan?"
+
+  utter_ask_card_type:
+  - text: "Sure, I can help you with that. What type of card are you interested in? You can choose from options like 'credit card' or 'debit card'. Please let me know your preference."
+  
+  utter_ask_card_amount:
+  - text: "Great! To proceed, we need to determine the card amount you require. How much money would you like for your card?"
+
+  utter_other_quetion_1:
+  - text: "ABC Bank offers a range of account options tailored to diverse financial needs. The savings account provides customers with a competitive interest rate, requiring a minimum balance of $100 and serving as a secure avenue for future savings goals. Their checking account stands out with features like no monthly maintenance fees upon meeting the minimum balance criteria, offering convenient access to funds through a debit card and online banking."
+
+  utter_other_quetion_2:
+  - text: "Savings Account: 0.75% APY (Annual Percentage Yield).Checking Account: No interest accrual on balances, but offers various benefits.12-Month Certificate of Deposit (CD): 1.25% APY.Money Market Account: 1.00% APY on balances over $5,000.30-Year Fixed-Rate Mortgage: 3.50% APR (Annual Percentage Rate).Auto Loan: 4.25% APR for a 60-month term"
+
+  utter_other_quetion_3:
+  - text: "ABC Bank prioritizes its customers' security by implementing robust measures such as advanced encryption protocols for secure online transactions and data protection. With multi-factor authentication procedures, customers are required to provide multiple forms of verification, bolstering account security. The bank employs sophisticated fraud monitoring systems that continuously scrutinize account activities, promptly flagging and addressing any suspicious transactions. EMV chip cards issued by ABC Bank enhance card-present security, reducing potential fraud risks."
+
+
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+slots:
+  username:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: username
+      conditions:
+      - active_loop: account_balance_form
+      - active_loop: account_transaction_form
+      - active_loop: loan_form
+      - active_loop: card_form
+  password:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: password
+      conditions:
+      - active_loop: account_balance_form
+      - active_loop: account_transaction_form
+      - active_loop: loan_form
+      - active_loop: card_form
+  account_number:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: account_number
+      conditions:
+      - active_loop: account_balance_form
+      - active_loop: account_transaction_form
+  loan_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: loan_type
+      conditions:
+      - active_loop: loan_form
+  loan_amount:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: loan_amount
+      conditions:
+      - active_loop: loan_form
+  loan_duration:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: loan_duration
+      conditions:
+      - active_loop: loan_form
+  telephone_number:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: telephone_number
+      conditions:
+      - active_loop: loan_form
+      - active_loop: card_form
+  email:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: email
+      conditions:
+      - active_loop: loan_form
+      - active_loop: card_form
+  loan_reason:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: loan_reason
+      conditions:
+      - active_loop: loan_form
+  card_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: card_type
+      conditions:
+      - active_loop: card_form
+  card_amount:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: card_amount
+      conditions:
+      - active_loop: card_form
+
+
+forms:
+  account_balance_form:
+    required_slots:
+        - username
+        - password
+        - account_number
+  account_transaction_form:
+    required_slots:
+        - username
+        - password
+        - account_number
+  loan_form:
+    required_slots:
+        - username
+        - password
+        - loan_type
+        - loan_amount
+        - loan_duration
+        - telephone_number
+        - email
+        - loan_reason
+  card_form:
+    required_slots:
+        - username
+        - password
+        - card_type
+        - card_amount
+        - telephone_number
+        - email
+
+
+
+entities:
+  - username
+  - password
+  - account_number
+  - loan_type
+  - loan_amount
+  - loan_duration
+  - telephone_number
+  - email
+  - loan_reason
+  - card_type
+  - card_amount
+
+actions:
+  - get_account_balance
+  - get_account_transactions
+  - get_response
+  - welcome_user
+  - reset_all_slots
+  - save_loan_application
+  - save_card_application
+
+
+
+

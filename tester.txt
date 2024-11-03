@@ -1,0 +1,86 @@
+rasa run --cors "*" --enable-api
+
+
+step -get a bank loan
+What kinds of loans does the bank offer?
+How can I apply for a personal loan?
+bank offer denna?
+
+user234
+
+test
+
+I need a personal loan
+personal loan one
+
+I need Rs 200000
+20000 k one
+
+5 years
+awurudu 20
+
+My telephone number is 123-456-7890
+number eka 123-456-7890
+number eka 0777777777.
+0777777777
+777-888-9999
+
+info@gmail.com
+mage email eka info@gmail.com
+
+I need a loan for buying a new home
+mata geyak ganna
+######################################################
+
+step -get a new bank card
+
+I want to apply for a new  card.
+mata one aluth bank card ekak.
+
+user234
+
+test
+
+I need a debit card
+mama kamathi credit card.
+
+I need Rs 20,000
+mata 20,000 k one
+
+######################################################
+
+step - account balance
+
+How can I check my account balance?
+mata account balance eka balanaa one
+
+user234
+
+test
+
+1082310654
+
+
+####################################################
+account transaction
+
+Can you provide details about my recent transactions?
+mata account transaction eka balanaa one.
+
+user234
+
+test
+
+1082310654
+
+###########################
+common quetions
+
+Branch Hours
+Holiday Schedule
+//types of accounts in ABC bank
+//Interest Rates
+//give ligibility criteria in ABC bank
+//give  Security features 
+Benefits
+contact the bank
