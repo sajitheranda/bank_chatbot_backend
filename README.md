@@ -12,6 +12,7 @@ This project is a backend for a bank chatbot developed using [Rasa](https://rasa
 </div>
 
 ## Table of Contents
+- [Screenshots](#S=screenshots).
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Key Files and Configuration](#key-files-and-configuration)
@@ -19,6 +20,26 @@ This project is a backend for a bank chatbot developed using [Rasa](https://rasa
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [License](#license)
+
+## Screenshots
+
+### 1. Home Page
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/f3553aed-a111-4114-a6a1-30da48614b66" alt="Home Page">
+  <p><em>Home Page</em></p>
+</div>
+
+### 2. Detail Page
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/7d276f16-6369-45f1-9f12-63a116a198cc" alt="Detail Page">
+  <p><em>Detail Page</em></p>
+</div>
+
+### 3. Chat Page
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5b377912-8ee9-4c1d-b3e6-21fcd7f3a136" alt="Chat Page">
+  <p><em>Chat Page</em></p>
+</div>
 
 ## Features
 - **Bilingual Support**: Communicates in both Sinhala and English.
